@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/test"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {
+        "test": true
+      }
+    ],
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

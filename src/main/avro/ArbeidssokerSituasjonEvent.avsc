@@ -1,0 +1,15 @@
+{
+  "type" : "record",
+  "namespace" : "no.nav.paw.situasjon",
+  "name" : "ArbeidssokerSituasjonEvent",
+  "fields" : [
+    {
+      "type" : "int",
+      "name" : "id"
+    },
+    {
+      "type" : "string",
+      "name" : "foedselsnummer"
+    }
+  ]
+}
