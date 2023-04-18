@@ -7,11 +7,11 @@ val dotenv = dotenv { ignoreIfMissing = true }
 
 data class Config(
     val database: DatabaseConfig = DatabaseConfig(
-        dotenv["NAIS_DATABASE_PAW_ARBEIDSSOKER_PROFILERING_PROFILERING_HOST"],
-        dotenv["NAIS_DATABASE_PAW_ARBEIDSSOKER_PROFILERING_PROFILERING_PORT"],
-        dotenv["NAIS_DATABASE_PAW_ARBEIDSSOKER_PROFILERING_PROFILERING_DATABASE"],
-        dotenv["NAIS_DATABASE_PAW_ARBEIDSSOKER_PROFILERING_PROFILERING_USERNAME"],
-        dotenv["NAIS_DATABASE_PAW_ARBEIDSSOKER_PROFILERING_PROFILERING_PASSWORD"]
+        dotenv["NAIS_DATABASE_PAW_ARBEIDSSOKER_SITUASJON_SITUASJON_HOST"],
+        dotenv["NAIS_DATABASE_PAW_ARBEIDSSOKER_SITUASJON_SITUASJON_PORT"],
+        dotenv["NAIS_DATABASE_PAW_ARBEIDSSOKER_SITUASJON_SITUASJON_DATABASE"],
+        dotenv["NAIS_DATABASE_PAW_ARBEIDSSOKER_SITUASJON_SITUASJON_USERNAME"],
+        dotenv["NAIS_DATABASE_PAW_ARBEIDSSOKER_SITUASJON_SITUASJON_PASSWORD"]
     ),
     val naisEnv: NaisEnv = NaisEnv.current(),
     val unleashClientConfig: UnleashClientConfig = UnleashClientConfig(
@@ -40,7 +40,7 @@ data class Config(
         "${dotenv["KAFKA_SCHEMA_REGISTRY_USER"]}:${dotenv["KAFKA_SCHEMA_REGISTRY_PASSWORD"]}",
         KafkaProducers(
             KafkaProducer(
-                dotenv["KAFKA_PRODUCER_ARBEIDSSOKER_PROFILERT_TOPIC"]
+                dotenv["KAFKA_PRODUCER_ARBEIDSSOKER_SITUASJON_TOPIC"]
             )
         )
     ),

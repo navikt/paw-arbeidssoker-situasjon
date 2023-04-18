@@ -26,6 +26,6 @@ class SituasjonRepository(private val dataSource: DataSource) {
     )
 
     companion object {
-        const val SITUASJON_TABELL = "profilering"
+        const val SITUASJON_TABELL = "situasjon"
     }
 }
