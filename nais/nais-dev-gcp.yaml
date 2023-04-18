@@ -1,7 +1,7 @@
 apiVersion: nais.io/v1alpha1
 kind: Application
 metadata:
-  name: paw-arbeidssoker-sitasjon
+  name: paw-arbeidssoker-situasjon
   namespace: paw
   labels:
     team: paw
@@ -15,7 +15,7 @@ spec:
     enabled: true
   image: {{ image }}
   ingresses:
-    - https://arbeidssoker-sitasjon.intern.dev.nav.no
+    - https://arbeidssoker-situasjon.intern.dev.nav.no
   port: 8080
   replicas:
     min: 1
@@ -33,11 +33,11 @@ spec:
     - name: KAFKA_CONSUMER_ARBEIDSSOKER_REGISTERING_TOPIC
       value: paw.arbeidssoker-registrert-v2
     - name: KAFKA_CONSUMER_GROUP_ID
-      value: arbeidssoker-sitasjon-consumer-v1
+      value: arbeidssoker-situasjon-consumer-v1
     - name: KAFKA_PRODUCER_ARBEIDSSOKER_SITUASJON_TOPIC
-      value: paw.arbeidssoker-sitasjon-v2
+      value: paw.arbeidssoker-situasjon-v2
     - name: KAFKA_PRODUCER_ID
-      value: arbeidssoker-sitasjon-producer-v1
+      value: arbeidssoker-situasjon-producer-v1
     - name: UNLEASH_URL
       value: https://unleash.nais.io/api/
   resources:
@@ -59,4 +59,4 @@ spec:
     sqlInstances:
       - type: POSTGRES_14
         databases:
-          - name: sitasjon
+          - name: situasjon
