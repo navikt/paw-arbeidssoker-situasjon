@@ -44,9 +44,9 @@ data class Config(
             )
         )
     ),
-    val aaregClientConfig: ServiceClientConfig = ServiceClientConfig(
-        dotenv["AAREG_URL"],
-        dotenv["AAREG_SCOPE"]
+    val veilarbregistreringClientConfig: ServiceClientConfig = ServiceClientConfig(
+        dotenv["VEILARBREGISTRERING_URL"],
+        dotenv["VEILARBREGISTRERING_SCOPE"]
     )
 )
 

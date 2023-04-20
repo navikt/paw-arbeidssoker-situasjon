@@ -19,6 +19,7 @@ import no.nav.common.featuretoggle.UnleashClientImpl
 import no.nav.common.kafka.producer.util.KafkaProducerClientBuilder
 import no.nav.common.kafka.util.KafkaPropertiesBuilder
 import no.nav.common.kafka.util.KafkaPropertiesPreset
+import no.nav.paw.situasjon.auth.TokenService
 import no.nav.paw.situasjon.config.Config
 import no.nav.paw.situasjon.config.NaisEnv
 import no.nav.paw.situasjon.config.createDatabaseConfig
@@ -92,10 +93,10 @@ fun Application.configureDependencyInjection(config: Config) {
                         listOf(ByClusterStrategy())
                     )
                 }
-
+                single { TokenService() }
                 single { ArbeidssokerSituasjonProducer(get(), config.kafka.producers.arbeidssokerSituasjon.topic) }
                 single { SituasjonRepository(get()) }
-                single { SituasjonService(get()) }
+                single { SituasjonService(get(), get(), get(), config.veilarbregistreringClientConfig) }
             }
         )
     }
