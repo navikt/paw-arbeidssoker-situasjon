@@ -40,6 +40,10 @@ spec:
       value: arbeidssoker-situasjon-producer-v1
     - name: UNLEASH_URL
       value: https://unleash.nais.io/api/
+    - name: VEILARBREGISTRERING_URL
+      value: http://veilarbregistrering
+    - name: VEILARBREGISTRERING_SCOPE
+      value: dev-gcp:paw:veilarbregistrering
   resources:
     limits:
       cpu: '3'
